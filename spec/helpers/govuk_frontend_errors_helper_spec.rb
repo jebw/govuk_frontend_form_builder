@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe GovukElementsErrorsHelper, type: :helper do
+RSpec.describe GovukFrontendErrorsHelper, type: :helper do
   include TranslationHelper
 
   let(:summary_title) { 'Message to alert the user to a problem goes here' }

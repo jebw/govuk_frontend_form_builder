@@ -1,4 +1,4 @@
-module GovukElementsErrorsHelper
+module GovukFrontendErrorsHelper
 
   class << self
     include ActionView::Context
