@@ -5,10 +5,9 @@ Code Climate: <a href="https://codeclimate.com/github/ministryofjustice/govuk_el
 
 # GovukElementsFormBuilder
 
-To build GOV.UK based services you need to use
-[govuk_elements](https://github.com/alphagov/govuk_elements) for presentation
-and [govuk_frontend_toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
-for the interaction aspects.
+To build GOV.UK based services you need to use the 
+[govuk_frontend](https://github.com/alphagov/govuk_frontend). This can be loaded
+via Webpacker.
 
 This gem serves a form builder and other various helper methods to produces the
 markup required to leverage presentation and interaction without having to
@@ -18,25 +17,61 @@ recreate the markup yourself.
 
 Guidance and documentation for how to use this library can be found [here](https://govuk-elements-rails-guide.herokuapp.com/).
 
-Any updates to the guidance should be submitted as pull requests to [this github repository](https://github.com/ministryofjustice/govuk_elements_rails_guide).
+Any updates to the guidance should be submitted as pull requests to [this github repository](https://github.com/DFE-Digital/govuk_elements_rails_guide).
 
 ## Installation
 
-Add these lines to your application's Gemfile, form builder is the last gem in list:
+### Step 1: Webpacker
 
-Version 0
+You need to include the GovUK Frontend - this is easiest by using the NPM module via **Webpacker**.
 
-```ruby
-gem 'govuk_frontend_toolkit', '~> 6.0.0'
-gem 'govuk_elements_rails', '~> 3.0.0'
-gem 'govuk_elements_form_builder', '~>0.0.0'
+See [Webpacker](https://github.com/rails/webpacker)
+
+### Step 2: Add the GOV.UK Frontend
+
+Next install the GOV.UK Frontend
+
+```sh
+yarn add govuk-frontend
 ```
 
-Version 1+
+You'll need to add this to the assets pipeline if your using Sprockets for
+SCSS and Images - add the following to `config/initializers/assets.rb`
+
 ```ruby
-gem 'govuk_frontend_toolkit', '~> 6.0.0'
-gem 'govuk_elements_rails', '~> 3.0.0'
-gem 'govuk_elements_form_builder',  '~>1.0.0'
+# Add GOVUK image asset path
+Rails.application.config.assets.paths << Rails.root.join("node_modules", "govuk-frontend", "assets", "images")
+
+# Add GOVUK font asset path
+Rails.application.config.assets.paths << Rails.root.join("node_modules", "govuk-frontend", "assets", "fonts")
+
+Rails.application.config.assets.precompile += %w[
+  favicon.ico
+  govuk-mask-icon.svg
+  govuk-apple-touch-icon-180x180.png
+  govuk-apple-touch-icon-167x167.png
+  govuk-apple-touch-icon-152x152.png
+  govuk-apple-touch-icon.png
+  govuk-opengraph-image.png
+  govuk-logotype-crown.png
+  govuk-crest-2x.png
+]
+```
+
+And add the GOV.UK Frontend to the `app/javascript/packs/application.js`
+
+```javascript
+import { initAll } from "govuk-frontend";
+
+initAll();
+```
+
+### Step 3: Add the form builder
+
+Add these lines to your application's Gemfile, form builder is the last gem in list:
+
+```ruby
+gem 'govuk_frontend_form_builder', '~>2.0.0'
 ```
 
 And then execute:
@@ -53,7 +88,7 @@ to be the default like this:
 ```rb
   class Application < Rails::Application
     # ...
-    ActionView::Base.default_form_builder = GovukElementsFormBuilder::FormBuilder
+    ActionView::Base.default_form_builder = GovukFrontendFormBuilder::FormBuilder
   end
 ```
 
@@ -97,7 +132,7 @@ push git commits and tags, and push the `.gem` file to
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
-https://github.com/[USERNAME]/govuk_elements_form_builder. This project is
+https://github.com/DFE-Digital/govuk_frontend_form_builder. This project is
 intended to be a safe, welcoming space for collaboration, and contributors are
 expected to adhere to the [Contributor Covenant](contributor-covenant.org)
 code of conduct.
