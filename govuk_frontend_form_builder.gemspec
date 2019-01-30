@@ -10,16 +10,13 @@ Gem::Specification.new do |s|
   s.authors     = ["Alistair Laing","Rob McKinnon"]
   s.email       = ["Alistair.Laing@Digital.Justice.gov.uk"]
   s.homepage    = "https://github.com/DFE-Digital/govuk_frontend_form_builder"
-  s.summary     = "Ruby on Rails form builder that generates GOV.UK elements styled markup for forms."
-  s.description = "Custom Ruby on Rails form builder that generates GOV.UK elements styled markup for form inputs, including error validation messages."
+  s.summary     = "Rails form builder to generate GOV.UK Frontend styled forms."
+  s.description = "Custom Ruby on Rails form builder that generates GOV.UK Frontend styled markup for form inputs, including error validation messages. Updated version of govuk_elements_form_builder"
   s.license     = "MIT"
 
   s.files = Dir["{app,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
   s.add_dependency "rails", ">= 5.2.2"
-  # Needed to ensure correct css/js is available
-  s.add_dependency 'govuk_frontend_toolkit', '>= 6.0.0'
-  s.add_dependency 'govuk_elements_rails',   '>= 3.0.0'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
