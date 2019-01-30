@@ -1,4 +1,4 @@
-module GovukElementsFormBuilder
+module GovukFrontendFormBuilder
   #
   # This class is intended to be a proxy for a FormBuilder object, and accumulate
   # multiple form elements rendered inside a block. Its main reason for existence is

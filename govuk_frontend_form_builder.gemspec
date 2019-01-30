@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "govuk_elements_form_builder/version"
+require "govuk_frontend_form_builder/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "govuk_elements_form_builder"
-  s.version     = GovukElementsFormBuilder::VERSION
+  s.version     = GovukFrontendFormBuilder::VERSION
   s.authors     = ["Alistair Laing","Rob McKinnon"]
   s.email       = ["Alistair.Laing@Digital.Justice.gov.uk"]
   s.homepage    = "https://github.com/ministryofjustice/govuk_elements_form_builder"

@@ -3,7 +3,7 @@ Build Status:
 
 Code Climate: <a href="https://codeclimate.com/github/ministryofjustice/govuk_elements_form_builder"><img src="https://codeclimate.com/github/ministryofjustice/govuk_elements_form_builder/badges/gpa.svg" /></a> <a href="https://codeclimate.com/github/ministryofjustice/govuk_elements_form_builder/coverage"><img src="https://codeclimate.com/github/ministryofjustice/govuk_elements_form_builder/badges/coverage.svg" /></a>
 
-# GovukElementsFormBuilder
+# GovukFrontendFormBuilder
 
 To build GOV.UK based services you need to use the 
 [govuk_frontend](https://github.com/alphagov/govuk_frontend). This can be loaded
