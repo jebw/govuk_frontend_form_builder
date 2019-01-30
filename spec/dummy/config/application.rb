@@ -9,7 +9,7 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require "govuk_elements_form_builder"
+require "govuk_frontend_form_builder"
 
 module Dummy
   class Application < Rails::Application

@@ -3,11 +3,11 @@ require 'spec_helper'
 
 class TestHelper < ActionView::Base; end
 
-RSpec.describe GovukElementsFormBuilder::FormBuilder do
+RSpec.describe GovukFrontendFormBuilder::FormBuilder do
   include TranslationHelper
 
   it "should have a version" do
-    expect(GovukElementsFormBuilder::VERSION).to eq("1.2.0")
+    expect(GovukFrontendFormBuilder::VERSION).to eq("1.2.0")
   end
 
   let(:helper) {TestHelper.new}

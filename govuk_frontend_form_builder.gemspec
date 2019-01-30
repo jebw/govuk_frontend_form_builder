@@ -5,11 +5,11 @@ require "govuk_frontend_form_builder/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "govuk_elements_form_builder"
+  s.name        = "govuk_frontend_form_builder"
   s.version     = GovukFrontendFormBuilder::VERSION
   s.authors     = ["Alistair Laing","Rob McKinnon"]
   s.email       = ["Alistair.Laing@Digital.Justice.gov.uk"]
-  s.homepage    = "https://github.com/ministryofjustice/govuk_elements_form_builder"
+  s.homepage    = "https://github.com/DFE-Digital/govuk_frontend_form_builder"
   s.summary     = "Ruby on Rails form builder that generates GOV.UK elements styled markup for forms."
   s.description = "Custom Ruby on Rails form builder that generates GOV.UK elements styled markup for form inputs, including error validation messages."
   s.license     = "MIT"

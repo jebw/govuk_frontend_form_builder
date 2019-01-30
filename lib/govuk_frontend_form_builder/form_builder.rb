@@ -1,4 +1,4 @@
-module GovukElementsFormBuilder
+module GovukFrontendFormBuilder
   class FormBuilder < ActionView::Helpers::FormBuilder
 
     ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
@@ -11,7 +11,7 @@ module GovukElementsFormBuilder
     # Used to propagate the fieldset outer element attribute to the inner elements
     attr_accessor :current_fieldset_attribute
 
-    # Ensure fields_for yields a GovukElementsFormBuilder.
+    # Ensure fields_for yields a GovukFrontendFormBuilder.
     def fields_for record_name, record_object = nil, fields_options = {}, &block
       super record_name, record_object, fields_options.merge(builder: self.class), &block
     end
